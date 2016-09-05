@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title middle>
+        Recipe List
+    </ion-title>
+<!--
+    <ion-buttons end>
+        <button (click)="addItem()"><ion-icon name="add"></ion-icon>Add Recipe</button>
+    </ion-buttons>
+-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-buttons>
+        <button (click)="addItem()"><ion-icon name="add"></ion-icon>Add Recipe</button>
+    </ion-buttons>
+    <ion-item-sliding *ngFor="let item of recipes">
+        <ion-item>
+                {{item.title}}
+            </ion-item>
+
+            <ion-item-options>
+                <button (click)="editRecipe(item)" light>
+                    <ion-icon name="paper"></ion-icon>
+                </button>
+                <button (click)="deleteRecipe(item)" danger>
+                    <ion-icon name="trash"></ion-icon>
+                </button>
+            </ion-item-options>
+
+      </ion-item-sliding>
+  </ion-list>

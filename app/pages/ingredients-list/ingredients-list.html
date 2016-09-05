@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        Recipe List
+    </ion-title>
+    <ion-buttons end>
+        <button (click)="addIngredient()"><icon add></icon>Add Ingredient</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items" (click)="viewIngredients(item)">{{item.title}}</ion-item>
+  </ion-list>
