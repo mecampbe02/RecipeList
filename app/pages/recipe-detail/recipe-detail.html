@@ -26,8 +26,8 @@
       <ion-card-header>
     Ingredients
   </ion-card-header>
-    <ion-card-content>
-      {{ingredient}}
+    <ion-card-content *ngFor="let item of ingredient">
+      {{item}}
     </ion-card-content>
   </ion-card>
 </ion-content>
