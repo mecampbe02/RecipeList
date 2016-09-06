@@ -14,13 +14,13 @@ export class RecipeDetailPage {
 
    private title;
   private description;
-   private ingredient = [];
+   private ingredients = [];
 
   constructor(private navParams: NavParams) {
 
     this.title = this.navParams.get('item').title;
     this.description = this.navParams.get('item').description;
-      this.ingredient = this.navParams.get('item').ingredient;
+      this.ingredients = this.navParams.get('item').ingredients;
 
   }
 

@@ -21,46 +21,46 @@ export class RecipeListPage {
     });
   }
 
-//  addItem(){
+  addItem(){
+
+    let addModal = this.modalCtrl.create(AddRecipePage);
+    addModal.onDidDismiss((recipe) => {
+          if(recipe){
+            this.saveItem(recipe);
+          }
+    });
+    addModal.present();
+  }
+
+// addItem(){
 //
-//    let addModal = this.modalCtrl.create(AddRecipePage);
-//    addModal.onDidDismiss((recipe) => {
-//          if(recipe){
-//            this.saveItem(recipe);
-//          }
-//    });
-//    addModal.present();
-//  }
-
- addItem(){
-
-        let prompt = this.alertCtrl.create({
-            title: 'Add Recipe',
-            inputs: [{
-                name: 'title',
-                placeholder: 'Recipe Name'
-            }, {
-                name:'description',
-                type:'textarea',
-                placeholder: 'directions'
-            }, {name:'ingredients',
-               placeholder: 'ingredients'}],
-            buttons: [
-                {
-                    text: 'Cancel'
-                },
-                {
-                    text: 'Add',
-                    handler: data => {
-                        this.saveItem(data);
-                       // this.notes.push(data);
-                    }
-                }
-            ]
-        });
-
-        prompt.present();
-    }
+//        let prompt = this.alertCtrl.create({
+//            title: 'Add Recipe',
+//            inputs: [{
+//                name: 'title',
+//                placeholder: 'Recipe Name'
+//            }, {
+//                name:'description',
+//                type:'textarea',
+//                placeholder: 'directions'
+//            }, {name:'ingredients',
+//               placeholder: 'ingredients'}],
+//            buttons: [
+//                {
+//                    text: 'Cancel'
+//                },
+//                {
+//                    text: 'Add',
+//                    handler: data => {
+//                        this.saveItem(data);
+//                       // this.notes.push(data);
+//                    }
+//                }
+//            ]
+//        });
+//
+//        prompt.present();
+//    }
 
   saveItem(recipe){
     this.recipes.push(recipe);

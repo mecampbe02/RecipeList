@@ -14,7 +14,8 @@ export class AddRecipePage {
 
   private title = "";
     private description = "";
-private ingredients = "";
+    private newIngredient = "";
+    private ingredients = [];
 
     constructor(private nav: NavController, private view: ViewController) {
 
@@ -35,6 +36,11 @@ private ingredients = "";
     close(){
         this.view.dismiss();
     }
+addIngredient() {
+    this.ingredients.push(this.newIngredient);
+    this.newIngredient = "";
+
+}
   viewItem(ingredients){
   this.nav.push(IngredientDetailPage , {
     ingredients: ingredients
